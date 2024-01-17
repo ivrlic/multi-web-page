@@ -1,0 +1,35 @@
+<li>
+  <label class="shopping-list-item" [ngClass]="boughtItemCssClass">
+    <input
+      type="checkbox" 
+      [checked]="isBought"
+      (click)="toggleIsBought()"
+      >
+
+    <ng-container *ngIf="!isEditing; else editMode">
+      <p class="shopping-list-item-name">{{item.name}}</p>
+      <p class="shopping-list-item-price">€{{item.price}}</p>
+    </ng-container>
+
+    <ng-template #editMode>
+      <!-- the below input generates an error in the app (a placeholder isn't shown)
+        because editedItem.name is used as [(ngModel)] as well as [placeholder] -->
+      <!-- <input [(ngModel)]="editedItem.name" [placeholder]="editedItem.name" class="input-name-field"> -->
+      <input [(ngModel)]="editedItem.name" placeholder="Item name" class="input-name-field">
+      <input [(ngModel)]="editedItem.price" placeholder="Price" class="input-price-field">
+    </ng-template>
+  </label>
+
+  <button *ngIf="!isEditing" (click)="editItem()">EDIT</button>
+  <button 
+    *ngIf="isEditing" 
+    (click)="saveEdit()"
+    [disabled]="!areAllNumeric(editedItem.price) || !editedItem.name.length"
+  >
+    SAVE
+  </button>
+  <button *ngIf="isEditing" (click)="cancelEdit()">CANCEL</button>
+
+  <button (click)="removeItem()">DEL</button>
+
+</li>

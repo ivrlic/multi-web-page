@@ -1,0 +1,44 @@
+
+<!-- template driven form -->
+
+<form (ngSubmit)="$event.preventDefault(); addNewItem()">
+  <div class="input-name-cont">
+    <label for="add-new-item">New item: </label>
+    <input
+      id="add-new-item"
+      class="input-name-field"
+      type="text"
+      name="new-item-name"
+      [(ngModel)]="newItemName"
+      title="Write a name of the item here."
+      >
+  </div>
+
+  <div class="input-price-cont">
+    <label for="add-new-price">The price of the item: </label>
+    <input
+      id="add-item-price"
+      class="input-price-field"
+      type="text"
+      name="new-item-price"
+      [(ngModel)]="newItemPrice"
+      [pattern]="numericPattern"
+      title="Write a valid price of the item here."
+      >
+      <!-- check if there is written text and if the written text is not valid number 
+        show the error notice-->
+      <div *ngIf="newItemPrice?.length && !areAllNumeric(newItemPrice)" class="error-notice">
+        Use only numbers. For a decimal number use a decimal point and one or two digits after.
+      </div>
+  </div>
+
+  <div>
+    <!-- the button is disabled if there is no name of an item
+      or a price of an item is not valid -->
+    <button
+      type="submit"
+      [disabled]="!areAllNumeric(newItemPrice) || !newItemName.length"
+    >Add item</button>
+  </div>
+</form>
+

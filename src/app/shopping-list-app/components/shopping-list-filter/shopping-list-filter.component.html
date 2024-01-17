@@ -1,0 +1,11 @@
+<div>
+  <select
+    [(ngModel)]="listFilter"
+    (ngModelChange)="selectFilter($event)"
+    >
+    <option value="0">All</option>
+    <option value="1">Bought</option>
+    <option value="2">Not Bought</option>
+  </select>
+</div>
+

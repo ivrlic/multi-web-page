@@ -1,0 +1,84 @@
+li {
+  width: fit-content;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 1rem;
+}
+
+.shopping-list-item {
+  display: flex;
+  width: 250px;
+  cursor: pointer;
+}
+
+.shopping-list-item-name {
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.shopping-list-item-price {
+  margin: 0 1rem 0 auto;
+}
+
+.bought-item {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: brown;
+}
+
+.input-price-field,
+.input-name-field {
+  font-size: 1rem;
+  padding: 0.125rem 0.25rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}
+  
+.input-price-field {
+  width: 50px;
+}
+
+.input-name-field {
+  width: 125px;
+}
+
+button {
+  border: 1px solid rgb(153, 153, 153);
+  border-bottom: 2px solid rgb(71, 85, 94);
+  border-radius: 10px;
+  background-color: transparent;
+  margin: 0;
+  margin-right: 0.5rem;
+  padding: 0.125rem 0.375rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(233, 218, 210);
+}
+
+button:active {
+  background-color: rgb(246, 237, 232);
+}
+
+button:last-of-type {
+  margin-right: 0;
+}
+
+button:last-of-type:hover,
+button:last-of-type:focus {
+  background-color: rgb(190, 126, 126);
+}
+
+button:last-of-type:active {
+  background-color: rgb(204, 152, 152);
+}
+
+.input-price-field,
+.input-name-field {
+  padding: 0.125rem 0.25rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+}

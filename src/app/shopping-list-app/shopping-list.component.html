@@ -1,0 +1,34 @@
+<div class="shopping-list-cont1">
+  <h2>SHOPPING LIST</h2>
+
+  <div class="shopping-list-cont2">
+    <add-item-form
+      (addItem)="addItem($event)"
+      ></add-item-form>
+      <!-- the other way is: (addItem)="items.push($event)" -->
+
+      <shopping-list-filter
+      (filterValue)="filterValue=$event"
+      ></shopping-list-filter>
+
+    <p *ngIf="items.length === 0; else showItems">
+      There are no items on the list.
+    </p>
+
+    <ng-template #showItems>
+    <!-- the other way to manage appearing data is to use: *ngIf="items.length > 0" -->
+      <ul>
+        <shopping-list-item
+          *ngFor="let item of visibleItems"
+          [item]="item"
+          [(isBought)]="item.isBought"
+        ></shopping-list-item>
+      </ul>
+      <total-amount
+        [items]="visibleItems"
+      ></total-amount>
+    </ng-template>
+  </div>
+</div>
+
+

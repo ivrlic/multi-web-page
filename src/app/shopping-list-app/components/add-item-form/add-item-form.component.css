@@ -1,0 +1,55 @@
+form {
+  margin: 1rem 0;
+}
+
+.input-name-cont,
+.input-price-cont {
+  margin-bottom: 0.5rem;
+}
+
+.input-price-field,
+.input-name-field {
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.input-price-field {
+  width: 50px;
+}
+
+.input-name-field {
+  width: 125px;
+}
+
+.error-notice {
+  color: rgb(220, 17, 17);
+  width: 350px;
+  margin: 0.5rem auto 0;
+  font-size: 0.875rem;
+}
+
+button {
+  border: 1px solid rgb(205, 205, 205);
+  border-bottom: 2px solid rgb(144, 168, 183);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+button:not([disabled]) {
+  border: 1px solid rgb(153, 153, 153);
+  border-bottom: 2px solid rgb(71, 85, 94);
+  background-color: transparent;
+}
+
+button:not([disabled]):hover,
+button:not([disabled]):focus {
+  background-color: rgb(233, 218, 210);
+  background-color: rgb(210, 226, 236);
+
+}
+
+button:not([disabled]):active {
+  background-color: rgb(192, 218, 231);
+}
