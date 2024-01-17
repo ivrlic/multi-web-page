@@ -1,0 +1,28 @@
+[
+  {
+    "id": "0aa2da48-3f54-4484-b38e-062d68a7706d",
+    "name": "bread",
+    "price": 1.5,
+    "isBought": false
+  },
+  {
+    "id": "37daeb58-a32d-4cf2-bcd5-f49a4f9d8954",
+    "name": "meat",
+    "price": 8.5,
+    "isBought": true
+  },
+  {
+    "id": "1f5119a8-2888-4fb6-872e-1554fd5c12c7",
+    "name": "apples",
+    "price": 3,
+    "isBought": false
+  },
+  {
+    "id": "04642fca-497d-4c59-8d0d-a276f908a491",
+    "name": "milk",
+    "price": 1.75,
+    "isBought": false
+  }
+]
+
+
