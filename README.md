@@ -54,7 +54,7 @@ Multi Web Page is a single-page application (SPA) developed as a project for lea
 ## Libraries
 
 - Google Fonts
-- Favicon from [icons8.com](https://icons8.com)
+- Icons from [icons8.com](https://icons8.com)
 
 <br>
 
