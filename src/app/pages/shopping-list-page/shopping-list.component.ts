@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShopItem } from './models/shopItem';
 import { EventService } from './services/EventService';
 import { ShoppingListService } from './services/shopping-list.service';
+import scrollToTop from 'src/app/services/scroll-to-top';
 
 @Component({
   selector: 'shopping-list',
@@ -11,13 +12,6 @@ import { ShoppingListService } from './services/shopping-list.service';
 
 export class ShoppingListComponent implements OnInit{
   items: ShopItem[] = []
-  // = [
-  //   new ShopItem ("bread", 1.5),
-  //   new ShopItem ("meat", 8.5, true),
-  //   new ShopItem ("apples", 3),
-  //   new ShopItem ("milk", 1.75),
-  // ]
-
   filterValue: string = "0"
 
   constructor(events: EventService, private shoppingListService: ShoppingListService) {
@@ -58,6 +52,8 @@ export class ShoppingListComponent implements OnInit{
         alert(error.message)
       }
     )
+    // scroll to top of the window
+    scrollToTop()
   }
 
   addItem(e : any): void {

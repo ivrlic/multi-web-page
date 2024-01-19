@@ -9,7 +9,6 @@ import { throwError } from 'rxjs';
 
 export class ShoppingListService {
 
-  // check validity of the url path 
   url = "assets/data.json"
 
   constructor(private httpClient: HttpClient) { }
@@ -34,7 +33,7 @@ export class ShoppingListService {
     } else {
       console.error('Server-side error: ', error.error)
     }
-    return throwError(() => new Error('Cannot retrieve wishes from the server. Please try again.'));
+    return throwError(() => new Error('Cannot retrieve items from the server. Please try again.'));
   }
 }
  

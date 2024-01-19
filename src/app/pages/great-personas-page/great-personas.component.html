@@ -1,0 +1,10 @@
+<h1>GREAT PERSONAS</h1>
+
+<div class="personas-cont">
+  <div *ngFor="let persona of personasList" class="persona-card">
+    <a [routerLink]="[persona.id]">
+      <img [src]="persona.img" alt="">
+      <h3>{{persona.fullName}}</h3>
+  </a>
+  </div>
+</div>

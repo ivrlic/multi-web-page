@@ -1,0 +1,22 @@
+<h1>{{persona.name.toUpperCase()}}</h1>
+
+<div class="persona-info-cont">
+
+  <img [src]="persona.img" alt="">
+  <p><strong>Full Name:</strong> <span> {{persona.fullName}}</span></p>
+  <p *ngIf="persona.nickName"><strong>Nickname:</strong> <span> {{persona.nickName}}</span></p>
+  <p><strong>Famous Quote:</strong> <span> {{persona.famousQuote}}</span></p>
+  <p><strong>Personal Life:</strong> <span> {{persona.personalLife}}</span></p>
+  <p><strong>Work:</strong> <span> {{persona.work}}</span></p>
+  <p><strong>Anegdote:</strong> <span> {{persona.anegdote}}</span></p>
+  <p><strong>Remembered For:</strong> <span> {{persona.rememberFor}}</span></p>
+
+</div>
+
+<a 
+  href="#" 
+  (click)="$event.preventDefault(); goToGreatPersonas()"
+  class=""
+>BACK</a>
+
+

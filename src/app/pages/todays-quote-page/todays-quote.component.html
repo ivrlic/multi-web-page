@@ -1,0 +1,18 @@
+
+<div class="todays-quote-cont">
+  <h1>TODAY'S QUOTE</h1>
+
+  <div class="quote-cont">
+    <p>{{ quote }}</p>
+    <p>- {{ author }} -</p>
+  </div>
+
+  <button 
+    [disabled]="isButtonDisabled" 
+    (click)="getNewQuote()">Get another quote</button>
+  
+  <!-- <div *ngIf="countdownMessage !== ''" class="counter-cont">
+    <p>{{ countdownMessage }}</p>
+    <p>Do not hurry. Take your time to absorb the wisdom from this quote.</p>
+  </div> -->
+</div>

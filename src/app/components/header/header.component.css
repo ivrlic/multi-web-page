@@ -1,0 +1,57 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  border-bottom: 2px solid rgb(172, 195, 209);
+  background-color: rgb(71, 85, 94);
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical-line {
+  color: white;
+  border: 1px solid white;
+  border-top-width: 1.5rem;
+  border-bottom-width: 1.5rem;
+  margin-right: 1rem;
+}
+
+img {
+  width: 40px;
+}
+
+ul img {
+  width: 25px;
+}
+
+ul img:hover,
+ul img:focus {
+  margin-top: -0.25rem;
+  border-bottom: 2px solid white;
+}
+
+ul img:active {
+  width: 27px;
+}
+
+ul {
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  color: white;
+}
+
+a {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+

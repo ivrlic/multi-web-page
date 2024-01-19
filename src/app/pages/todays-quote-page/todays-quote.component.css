@@ -1,0 +1,54 @@
+.todays-quote-cont {
+  text-align: center;
+}
+
+h1 {
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.quote-cont {
+  margin-bottom: 5rem;
+}
+
+.counter-cont p {
+  color: rgb(71, 85, 94);
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.counter-cont {
+  margin-top: -10rem;
+  margin-bottom: 10rem;
+}
+
+button {
+  margin-bottom: 12rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border: 1px solid rgb(153, 153, 153);
+  border-bottom: 2px solid rgb(71, 85, 94);
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  cursor: not-allowed;
+}
+
+button:not([disabled]) {
+  font-weight: bold;
+  border: 1px solid rgb(153, 153, 153);
+  border-bottom: 4px solid rgb(71, 85, 94);
+  cursor: pointer;
+}  
+
+button:not([disabled]):hover,
+button:not([disabled]):focus {
+  background-color: rgb(233, 218, 210);
+  background-color: rgb(210, 226, 236);
+
+}
+
+button:not([disabled]):active {
+  background-color: rgb(192, 218, 231);
+}

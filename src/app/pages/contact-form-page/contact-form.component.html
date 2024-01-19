@@ -1,0 +1,83 @@
+
+<h1>CONTACT FORM</h1>
+
+<div *ngIf="isSubmitted" class="msg-background">
+  <div class="msg-box">
+    <p>Thank you for reaching out. We will no be able to reach back because this is a demo version. Anyway, have a great day!😄🌞</p>
+    <button (click)="closeBox()">OK</button>
+  </div>
+</div>
+
+<form
+  (ngSubmit)="$event.preventDefault(); submitForm()"
+  [formGroup]="contactFormGroup"
+>
+  <div class="form-small-cont">
+      <label>Your name</label>
+      <input 
+          type="text" 
+          formControlName="senderName"
+      >
+      <p 
+          *ngIf="contactFormGroup.get('senderName')?.invalid && contactFormGroup.get('senderName')?.touched"
+          class="error-notice"
+      >Your name is required.</p>
+  </div>
+    
+  <div class="form-small-cont">  
+      <label>Your email address</label>
+      <input 
+          type="email" 
+          formControlName="senderEmail"
+      >
+      <div 
+        *ngIf="contactFormGroup.get('senderEmail')?.invalid && contactFormGroup.get('senderEmail')?.dirty || contactFormGroup.get('senderEmail')?.touched"
+      >
+          <p
+              *ngIf="contactFormGroup.get('senderEmail')?.hasError('required')"
+              class="error-notice"
+          >Your e-mail is required.</p>
+          
+          <p
+              *ngIf="contactFormGroup.get('senderEmail')?.hasError('email')"
+              class="error-notice"
+          >Please, enter a valid e-mail address.</p>
+
+          <p
+              *ngIf="contactFormGroup.get('senderEmail')?.hasError('invalidEmailDomain')"
+              class="error-notice"
+          >The provider is not allowed.</p>
+      </div>
+  </div>
+
+  <div class="form-small-cont">
+      <label>Message</label>
+      <textarea 
+          rows="3"
+          formControlName="senderMessage"
+      ></textarea>
+
+      <div *ngIf="contactFormGroup.get('senderMessage')?.invalid && contactFormGroup.get('senderMessage')?.dirty || contactFormGroup.get('senderMessage')?.touched">
+          <p
+              *ngIf="contactFormGroup.get('senderMessage')?.hasError('required')"
+              class="error-notice"
+          >A message is required.</p>
+          
+          <!-- minlength has to be all lower case here in the html-->
+          <p
+              *ngIf="contactFormGroup.get('senderMessage')?.hasError('minlength')"
+              class="error-notice"
+          >A message has to be at least 12 characters long.</p>
+      </div>
+  </div>
+
+  <div class="form-small-cont">
+      <button
+        type="submit"
+        [disabled]="contactFormGroup.invalid"
+      >
+        Send Message
+      </button>
+  </div>
+</form>
+

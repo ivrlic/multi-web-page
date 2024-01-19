@@ -1,0 +1,15 @@
+.timer {
+  position: fixed;
+  right: 0;
+  font-size: 0.875rem;
+  text-align: center;
+  border-bottom: 2px solid rgb(172, 195, 209);
+  background-color: rgb(71, 85, 94);
+  color: white;
+  padding: 0.25rem 1.5rem;
+}
+
+.timer p{
+  margin: 0;
+  line-height: 1rem;
+}
