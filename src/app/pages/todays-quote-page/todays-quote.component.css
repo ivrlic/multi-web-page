@@ -8,6 +8,7 @@ h1 {
 }
 
 .quote-cont {
+  padding: 0 3rem;
   margin-bottom: 5rem;
 }
 
@@ -19,6 +20,7 @@ h1 {
 }
 
 .counter-cont {
+  padding: 0 3rem;
   margin-top: -10rem;
   margin-bottom: 10rem;
 }
