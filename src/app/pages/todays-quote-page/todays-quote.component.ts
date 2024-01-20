@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import scrollToTop from 'src/app/services/scroll-to-top';
 import { QuoteService } from './services/quote.service';
 import { CountdownService } from 'src/app/services/countdown.service';
+import { Subject, Subscription } from 'rxjs';
 
 
-const COUNTER_TIME = 300; // time in seconds
+const COUNTER_TIME = 60 // time in seconds
 
 @Component({
   selector: 'todays-quote',
@@ -15,7 +16,8 @@ export class TodaysQuoteComponent implements OnInit{
 
   quote : string = "";
   author: string = "";
-  isButtonDisabled: boolean = false;
+  isButtonDisabled!: boolean;
+  private countdownSubscription: Subscription | undefined;
 
   constructor(
     private quoteService: QuoteService, 
@@ -24,26 +26,33 @@ export class TodaysQuoteComponent implements OnInit{
   ngOnInit(): void {
     // load data from localStorage
     this.loadQuoteFromLocalStorage();
-    
+
     // if there is no quote, get new one
     if (!this.quote) {
       this.getNewQuote();
     }
 
+    // on initialization update if button is disabled
+    this.isButtonDisabled = ! this.countdownService.btnDisabled
+
     // if timer starts disable the button and when it expires enable the button
-    this.countdownService.timeExpired.subscribe(timeExpired => {
+    this.countdownSubscription = this.countdownService.getTimeExpired().subscribe(timeExpired => {
       this.isButtonDisabled = !timeExpired
-      console.log(!timeExpired)
     })
 
     // scroll to top of the window
     scrollToTop()
   }
 
+  ngOnDestroy(): void {
+    if (this.countdownSubscription) {
+      this.countdownSubscription.unsubscribe();
+    }
+  }
+
   getNewQuote(){
     // getting data from data.json
     this.quoteService.getRandomQuote().subscribe((data: any) => {
-      console.log(data)
       this.quote = data.content;
       this.author = data.author;
       this.saveQuoteToLocalStorage()
@@ -52,7 +61,7 @@ export class TodaysQuoteComponent implements OnInit{
         alert(error.message)
       }
     );
-
+    this.isButtonDisabled = true; // Botun postaje disabled
     this.countdownService.startCountdown(COUNTER_TIME);
   };
 

@@ -11,8 +11,7 @@
     [disabled]="isButtonDisabled" 
     (click)="getNewQuote()">Get another quote</button>
   
-  <!-- <div *ngIf="countdownMessage !== ''" class="counter-cont">
-    <p>{{ countdownMessage }}</p>
+  <div *ngIf="isButtonDisabled" class="counter-cont">
     <p>Do not hurry. Take your time to absorb the wisdom from this quote.</p>
-  </div> -->
+  </div>
 </div>
